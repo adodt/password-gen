@@ -83,17 +83,4 @@ function writePassword(){
     passwordText.value = password;
 }
 
-//if outside parameters, start over
-
-//alert how many characters the password will have
-
-//determine parameters of password
-
-//LOOP go back to choice if choice is outside parameter
-
-//add parameters to password 
-
-//create password from empty string
-
-//return pasword to #password
 
