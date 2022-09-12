@@ -1,7 +1,7 @@
-// Assignment Code
+
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -10,7 +10,7 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
 
 //Arrays
@@ -32,7 +32,7 @@ function generatePassword(){
 
     if(confirmLength <=8 || confirmLength >= 128){
         alert("Password must be between 9-127 characters.");
-        (prompt("How many charaters would you like in your password? Between 9-127."));
+        return "";
     } else (confirmLength >=9 || confirmLength <=128);
         alert(`Your password will have ${confirmLength} characters`);
 
@@ -42,8 +42,9 @@ function generatePassword(){
     let confirmNumericCharacter= confirm("Would you like to include special characters?");
 
     if(confirmCharacter === false && confirmLowerCase === false && confirmUpperCase === false && confirmNumericCharacter === false){
-        alert("Must choose at least one parameter")
-        let confirmCharacter = confirm("Would you like to include special characters?");
+        alert("Must choose at least one parameter");
+
+    let confirmCharacter = confirm("Would you like to include special characters?");
     let confirmLowerCase = confirm("Would you like to include lowercase?");
     let confirmUpperCase = confirm("Would you like to include uppercase?");
     let confirmNumericCharacter= confirm("Would you like to include special characters?");
@@ -66,10 +67,21 @@ function generatePassword(){
 
 console.log(passwordCharacters)
 
+let randomPassword = ""
 
+for (var i=0; i < confirmLength; i++){
+    randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+    console.log(randomPassword)
+}
+return randomPassword;
 }
     
+function writePassword(){
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
+    passwordText.value = password;
+}
 
 //if outside parameters, start over
 
